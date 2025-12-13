@@ -42,8 +42,7 @@ int menu() { // Fonction principale qui affiche le menu et gère les choix de l'
     // Cela permet d'afficher les option des menus
 
     printf("1. Lancer une partie\n");
-    printf("2. Acceder aux fichiers contenant les logs\n");
-    printf("3. Quittez le jeu tappez\n");
+    printf("2. Quittez le jeu tappez\n");
     scanf("%i", &choix);
 
 
@@ -67,13 +66,12 @@ int menu() { // Fonction principale qui affiche le menu et gère les choix de l'
             printf("Temps total joueur %s (O) = %.2f secondes\n", J2.nom, J2.temps_total);// Même chose pour le joueur 2
             break;// sort de l'option 1
         case 2 :
-            printf("Acceder aux fichiers contenant les logs");
-            break;// sort de l'option 2
-        case 3 : // Si l'utilisateur choisit l'option 3
-            return 1;// Retourne 1 pour quitter le programme
+            return 1; // retoruner 1 pour indiquier que lee programme est terminèe
+            // sort de l'option 2
         default :
-        printf("Veuillez Saisire Uniquement Les 3 Chiffres Mentionèes\n);
+        printf("Veuillez Saisire Uniquement Les 3 Chiffres Mentionèes\n); // Par Default si l'utilisateur tap un numero heros de 1 et 2.
         }
             
 
     }
+
