@@ -112,7 +112,7 @@ void player_turn(char board[3][3], Joueur* J1, Joueur* J2) {// Fonction principa
         // Si on atteint 9 tours
         if (tour == 9) {
             printf("\n match nul on ne peut pu jouer le tableau est rempli \n");// On va afficher un message comme quoi les joueurs on réalisé un match nul
-            printf(fichier, "\nMatch nul\n");// et entrer dans le fichier Match nul
+            fprintf(fichier, "\nMatch nul\n");// et entrer dans le fichier Match nul
             fclose(fichier);// fermer le fichier pour finir
             return;
         }
@@ -151,4 +151,5 @@ int checkWin(char board[3][3]) {// Fonction qui vérifie s'il y a un gagnant
 
     return 0;
 }
+
 
