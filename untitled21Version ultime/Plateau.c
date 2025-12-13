@@ -1,4 +1,4 @@
-#include "Plateau.h"
+e#include "Plateau.h"
 #include <stdio.h>
 #include <time.h>
 
@@ -43,11 +43,11 @@ void placement(char board[3][3], Joueur* joueur, char cygne) {// Fonction pour g
     clock_t debut = clock();// Variables pour mesurer le temps
 
     do {// Boucle qui continue tant que le coup n'est pas valide avec le do while
-        printf("\n%s (%c), veuillez entrer la coordonnee x  : ", joueur->nom, cygne);// Demande au joueur d'entrer la coordonnée x
+        printf("\n%s (%c), veuillez entrer la coordonnee x ( La Ligne )  : ", joueur->nom, cygne);// Demande au joueur d'entrer la coordonnée x
 
         scanf("%i", &joueur->position_x);// Lit la coordonnée x entrée par le joueur
 
-        printf("%s (%c), veuillez entrer la coordonnee y  : ", joueur->nom, cygne);// Demande au joueur d'entrer la coordonnée y
+        printf("%s (%c), veuillez entrer la coordonnee y (La Colone )  : ", joueur->nom, cygne);// Demande au joueur d'entrer la coordonnée y
 
         scanf("%i", &joueur->position_y);// Lit la coordonnée y entrée par le joueur
 
@@ -151,5 +151,6 @@ int checkWin(char board[3][3]) {// Fonction qui vérifie s'il y a un gagnant
 
     return 0;
 }
+
 
 
