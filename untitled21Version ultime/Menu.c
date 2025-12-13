@@ -69,9 +69,10 @@ int menu() { // Fonction principale qui affiche le menu et gère les choix de l'
             return 1; // retoruner 1 pour indiquier que lee programme est terminèe
             // sort de l'option 2
         default :
-        printf("Veuillez Saisire Uniquement Les 3 Chiffres Mentionèes\n); // Par Default si l'utilisateur tap un numero heros de 1 et 2.
+        printf("Veuillez Saisire Uniquement Les 2 Chiffres Mentionèes\n); // Par Default si l'utilisateur tap un numero heros de 1 et 2.
         }
             
 
     }
+
 
