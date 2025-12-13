@@ -83,7 +83,7 @@ void player_turn(char board[3][3], Joueur* J1, Joueur* J2) {// Fonction principa
     char joueur_mtn = 'X';// Variable qui indique quel joueur doit jouer ('X' commence)
     int tour = 0;// Compteur de tours initialisé à 0
 
-    FILE *fichier = fopen("historique_morpion.txt", "w");// Ouvre un fichier en mode écriture pour enregistrer l'historique
+    FILE *fichier = fopen("historique_morpio_datexxx.txt", "w");// Ouvre un fichier en mode écriture pour enregistrer l'historique
     fprintf(fichier, "historique de la game \n\n");// Écrit l'en-tête du fichier d'historique
 
     while (tour < 9) {// Boucle qui continue tant qu'il reste des cases vides, maximum 9 tours
@@ -151,6 +151,7 @@ int checkWin(char board[3][3]) {// Fonction qui vérifie s'il y a un gagnant
 
     return 0;
 }
+
 
 
 
