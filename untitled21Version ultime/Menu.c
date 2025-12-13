@@ -69,8 +69,11 @@ int menu() { // Fonction principale qui affiche le menu et gère les choix de l'
         case 2 :
             printf("Acceder aux fichiers contenant les logs");
             break;// sort de l'option 2
-        case 3 :// Si l'utilisateur choisit l'option 3
-            return 0;// Retourne 0 pour quitter le programme
+        case 3 : // Si l'utilisateur choisit l'option 3
+            return 1;// Retourne 1 pour quitter le programme
+        default :
+        printf("Veuillez Saisire Uniquement Les 3 Chiffres Mentionèes\n);
         }
-            return 0;
+            
+
     }
