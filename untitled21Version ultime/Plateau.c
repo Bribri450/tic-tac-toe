@@ -83,17 +83,29 @@ void player_turn(char board[3][3], Joueur* J1, Joueur* J2) {// Fonction principa
     char joueur_mtn = 'X';// Variable qui indique quel joueur doit jouer ('X' commence)
     int tour = 0;// Compteur de tours initialisé à 0
 
-    FILE *fichier = fopen("historique_morpio_datexxx.txt", "w");// Ouvre un fichier en mode écriture pour enregistrer l'historique
-    fprintf(fichier, "historique de la game \n\n");// Écrit l'en-tête du fichier d'historique
+    FILE *fichier = fopen("historique_morpio_dateXXX.txt", "w");// Ouvre un fichier en mode écriture pour enregistrer l'historique
+    fprintf(fichier, "historique du jeu \n\n");// Écrit l'en-tête du fichier d'historique
+    void afficherHistorique(const char *filename) {//Procdure pour afficher l'historique a la fin du jeu (outile)
+    FILE *f = fopen(filename, "r");//ouvirer le fichier avec le droit de lecture r
+    char ligne[256];// reserver 256 ligne une espace assie pour affichier au moin 29 parites jouées
 
+    printf("\n===== HISTORIQUE DE LA PARTIE =====\n"); // affiche le nom indique de l'historique
+    while (fgets(ligne, sizeof(ligne), f)) //boucle while pour plusiure itiration avec lire en utilisant la fonction fgets qui permet de sasire avec les espaces
+        printf("%s", ligne); // afficher les lingns enregistrer
+    printf("=================================\n");// fin de l'historique
+
+    fclose(f);//fermuture de fichier
+}
     while (tour < 9) {// Boucle qui continue tant qu'il reste des cases vides, maximum 9 tours
         if (joueur_mtn == 'X') {// Si c'est le tour du joueur X
             placement(board, J1, 'X');// Le joueur 1 place son symbole 'X'
+            logMove(f,tour +1,'X',J1->position_x,J1->position_y); //enregistre la position et le tour du joueur 1 avec le symbole 'X'
             joueur_mtn = 'O';// Change pour le prochain joueur 'O'
         } else {// Sinon c'est le tour du joueur O
             placement(board, J2, 'O');// Le joueur 2 place son symbole 'O'
-            joueur_mtn = 'X';
-        }// Change pour le prochain joueur 'X'
+            logMove(f,tour +1,'O',J2->position_x,J2->position_y); //enregistre la position et le tour du joueur 2 avec le symbole 'O'
+             joueur_mtn = 'X';// Change pour le prochain joueur 'X'
+        } 
 
         tour++;// Incrémente le compteur tours donc cela fait tour = 0 + 1 = 1
 
@@ -117,6 +129,8 @@ void player_turn(char board[3][3], Joueur* J1, Joueur* J2) {// Fonction principa
             return;
         }
     }
+ fcolse(f);// fermer le fichier 
+ afficherHistorique(filename);// pour afficher a la fin du jeu ce qui ecrit de dont du fichier filename (historique du jeu ,le nombre de tour, nom du joueur ) 
 }
 
 
@@ -151,6 +165,7 @@ int checkWin(char board[3][3]) {// Fonction qui vérifie s'il y a un gagnant
 
     return 0;
 }
+
 
 
 
